@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sinais de Apostas</title>
+  <style>
+    body { font-family: sans-serif; background: #f0f0f0; padding: 20px; }
+    .card { background: white; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 2px 5px #ccc; }
+    .valor { font-weight: bold; color: green; }
+  </style>
+  <script>
+    setInterval(() => window.location.reload(), 30000);
+  </script>
+</head>
+<body>
+  <h2>📊 Sinais ao Vivo</h2>
+  {% if sinais %}
+    {% for s in sinais %}
+      <div class="card">
+        <strong>{{ s.jogo }}</strong><br>
+        🏆 {{ s.liga }}<br>
+        📈 {{ s.mercado }}<br>
+        💰 Odd: {{ s.odd }} | 🎯 Prob: {{ s.prob }}%<br>
+        ✅ <span class="valor">Valor: {{ s.valor }}</span><br>
+        🕒 {{ s.horario }}
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>Sem sinais no momento.</p>
+  {% endif %}
+</body>
+</html>
