@@ -1,0 +1,7 @@
+sinais-robos/
+├── app/
+│   └── main.py           ✅ (está chamando o HTML)
+├── templates/
+│   └── index.html        ✅ (o arquivo que você colou ali)
+├── requirements.txt      ✅
+├── render.yaml           ✅
